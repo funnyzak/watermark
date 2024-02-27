@@ -23,11 +23,16 @@ export default class IndexPage extends React.Component {
           style={{
             padding: '20px 0 0',
           }}>
+          Developed by&nbsp;
           <a
             target='_blank'
             href='https://github.com/dxcweb/watermark'
             style={{ color: '#1890ff' }}>
-            Powered by dxcweb/watermark
+            DXCWeb
+          </a>
+          , published by&nbsp;
+          <a target='_blank' href='https://github.com/funnyzak/watermark' style={{ color: '#1890ff' }}>
+            FunnyZak
           </a>
         </Block>
       </div>

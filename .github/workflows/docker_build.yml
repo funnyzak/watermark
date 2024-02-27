@@ -60,7 +60,7 @@ jobs:
           } >> $GITHUB_OUTPUT
 
   docker-release:
-    name: Publish Docker images
+    name: Release Docker images
     needs: [setup]
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -136,7 +136,7 @@ jobs:
             linux/arm/v7
 
   docker-release-base-nodeimage:
-    name: Publish Docker images
+    name: Release Docker images with base node image
     needs: [setup]
     runs-on: ubuntu-latest
     timeout-minutes: 20
