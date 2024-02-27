@@ -1,5 +1,6 @@
 # Watermark
   
+  [![Build Status][build-status-image]][build-status]
   [![Docker Pulls](https://img.shields.io/docker/pulls/funnyzak/watermark)](https://hub.docker.com/r/funnyzak/watermark/tags)
   [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/funnyzak/watermark)](https://hub.docker.com/r/funnyzak/watermark/tags)
   
@@ -32,3 +33,6 @@ yarn && yarn start
 ## CopyRight
 
 Powered by [dxcweb/watermark](https://github.com/dxcweb/watermark)
+
+[build-status-image]: https://github.com/funnyzak/watermark/actions/workflows/docker_build.yml/badge.svg
+[build-status]: https://github.com/funnyzak/watermark/actions
