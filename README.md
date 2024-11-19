@@ -12,6 +12,12 @@ Web纯前端图片加水印。用来在各种证件上添加 **“仅用于办�
 docker run -d -p 3000:80 --name watermark funnyzak/watermark:latest
 ```
 
+另外也可以使用国内镜像加速：
+
+```bash
+docker run -d -p 3000:80 --name watermark registry.cn-beijing.aliyuncs.com/funnyzak/watermark:latest
+```
+
 ## Preview
 
 在线预览：[https://watermark.yycc.dev](https://watermark.yycc.dev)
