@@ -106,6 +106,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ALIYUNCS_PASSWORD }}
 
+      - name: Set ALIYUNCS Tags
+        run: |
+          replace_comma_with_tag() {
+            new_tags=""
+            for tag in $(echo $1 | tr ',' ' '); do
+              new_tags="$new_tags registry.cn-beijing.aliyuncs.com/$tag"
+            done
+            echo $new_tags | tr ' ' ','
+          }
+          echo "ALIYUNCS_TAGS=$(replace_comma_with_tag ${{ needs.setup.outputs.TAG_NAME }})" >> $GITHUB_ENV
+
       - name: Cache go-build
         uses: actions/cache@v4
         with:
@@ -137,7 +148,7 @@ jobs:
           push: true
           tags: |
             ${{ needs.setup.outputs.TAG_NAME }}
-            registry.cn-beijing.aliyuncs.com/${{ needs.setup.outputs.TAG_NAME }}
+            ${{ env.ALIYUNCS_TAGS }}
           file: ./DockerfileGo
           platforms: |
             linux/amd64
